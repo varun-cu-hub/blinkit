@@ -53,7 +53,7 @@ export const HomeFeed: React.FC<HomeFeedProps> = ({
   const currentCategoryTitle = currentCategoryObj ? currentCategoryObj.name : 'All Items';
 
   return (
-    <div className="space-y-4 pb-24 p-3.5 bg-[#F5F6F8] min-h-[500px]">
+    <div className="space-y-4 pb-24 p-3.5 bg-[#FAF9FD] min-h-[500px]">
       {/* Promotional Banner (shown when not searching) */}
       {!isSearchActive && (
         <>
@@ -69,10 +69,10 @@ export const HomeFeed: React.FC<HomeFeedProps> = ({
                 Authentic Indian Brands & Groceries
               </h2>
               <p className="text-xs text-neutral-800 font-medium mt-1">
-                Over 360+ verified items delivered in 8-10 minutes
+                A curated selection of everyday essentials, delivered in 8-10 minutes
               </p>
-              <div className="inline-flex items-center gap-1 bg-[#0C831F] text-white text-xs font-bold px-3 py-1.5 rounded-xl mt-2.5 shadow-xs">
-                <span>View Cart & Checkout</span>
+              <div className="inline-flex items-center gap-1 bg-[#2E647D] text-white text-xs font-bold px-3 py-1.5 rounded-xl mt-2.5 shadow-xs">
+                <span>Checkout</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </div>
@@ -81,22 +81,22 @@ export const HomeFeed: React.FC<HomeFeedProps> = ({
             <div className="absolute -right-2 -bottom-2 w-28 h-28 opacity-90 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
               <div className="w-20 h-24 bg-white/90 backdrop-blur-xs rounded-xl shadow-lg border border-amber-200 p-2 flex flex-col justify-between rotate-6">
                 <span className="text-[10px] font-bold text-neutral-900">Delivery in</span>
-                <span className="text-sm font-black text-[#0C831F]">8 MINS</span>
+                <span className="text-sm font-black text-[#2E647D]">8 MINS</span>
                 <div className="w-full bg-emerald-100 rounded-full h-1.5">
-                  <div className="bg-[#0C831F] h-1.5 rounded-full w-4/5" />
+                  <div className="bg-[#2E647D] h-1.5 rounded-full w-4/5" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Eco Dry Plastics Feature Banner */}
-          <div className="bg-[#EBF7EE] border border-[#CDEED5] rounded-2xl p-3 flex items-center justify-between">
+          <div className="bg-[#EFF6F0] border border-[#BAD6BF] rounded-2xl p-3 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0">
                 <Leaf className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#144A29]">
+                <h4 className="text-xs font-bold text-[#183440]">
                   Return dry plastics initiative
                 </h4>
                 <p className="text-[11px] text-emerald-800">
@@ -155,7 +155,7 @@ export const HomeFeed: React.FC<HomeFeedProps> = ({
 
           <button
             onClick={onOpenCheckout}
-            className="text-xs font-bold text-[#0C831F] hover:underline flex items-center gap-0.5"
+            className="text-xs font-bold text-[#2E647D] hover:underline flex items-center gap-0.5"
           >
             <span>Go to Cart</span>
             <ArrowRight className="w-3 h-3" />

@@ -79,7 +79,7 @@ export const MobileFrame: React.FC<MobileFrameProps> = ({
             onClick={() => onNavigate('checkout')}
             className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-colors ${
               currentScreen === 'checkout'
-                ? 'bg-[#0C831F] text-white shadow-xs'
+                ? 'bg-[#2E647D] text-white shadow-xs'
                 : 'bg-neutral-800 text-neutral-300 hover:text-white'
             }`}
           >

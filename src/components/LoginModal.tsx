@@ -105,12 +105,12 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         className="w-full max-w-md bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden text-neutral-900 border border-neutral-200"
       >
         {/* Header Branding */}
-        <div className="bg-[#F8CB46] p-4 flex items-center justify-between border-b border-amber-300">
+        <div className="bg-[#5D849A] p-4 flex items-center justify-between border-b border-amber-300">
           <div className="flex items-center gap-2">
             <span className="font-black text-xl tracking-tight text-neutral-900">
-              blink<span className="text-[#0C831F]">it</span>
+              blink<span className="text-[#2E647D]">it</span>
             </span>
-            <span className="bg-[#0C831F] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="bg-[#2E647D] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
               Wallet
             </span>
           </div>
@@ -127,7 +127,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           {step === 'welcome-bonus' ? (
             <div className="text-center py-6 space-y-3 animate-in zoom-in-95 duration-200">
               <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto shadow-md">
-                <Gift className="w-8 h-8 animate-bounce text-[#0C831F]" />
+                <Gift className="w-8 h-8 animate-bounce text-[#2E647D]" />
               </div>
               <h3 className="text-xl font-black text-neutral-900">
                 ₹500 Added to Wallet!
@@ -135,16 +135,16 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               <p className="text-xs text-neutral-600 max-w-xs mx-auto">
                 Welcome to Blinkit, <strong>{loggedInName}</strong>! Your <strong>Wallet</strong> now has <strong>₹500</strong> credit ready to place orders up to ₹500.
               </p>
-              <div className="inline-flex items-center gap-2 bg-[#FFFBEB] border border-[#F8CB46] text-neutral-900 text-xs font-bold px-4 py-2 rounded-xl shadow-xs">
-                <Wallet className="w-4 h-4 text-[#0C831F]" />
+              <div className="inline-flex items-center gap-2 bg-[#FCFBF7] border border-[#5D849A] text-neutral-900 text-xs font-bold px-4 py-2 rounded-xl shadow-xs">
+                <Wallet className="w-4 h-4 text-[#2E647D]" />
                 <span>Wallet Balance: ₹500</span>
               </div>
             </div>
           ) : step === 'phone' ? (
             <>
               {/* ₹500 First Time Login Wallet Perk Card */}
-              <div className="bg-gradient-to-r from-[#FFFBEB] via-[#FFF9E6] to-[#FEF3C7] border border-[#F8CB46] rounded-2xl p-3.5 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-[#F8CB46] text-neutral-950 flex items-center justify-center shrink-0 shadow-xs font-bold">
+              <div className="bg-gradient-to-r from-[#FCFBF7] via-[#F3F7F9] to-[#E2EDF1] border border-[#5D849A] rounded-2xl p-3.5 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-[#5D849A] text-neutral-950 flex items-center justify-center shrink-0 shadow-xs font-bold">
                   <Wallet className="w-6 h-6 text-neutral-900" />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     <span className="text-xs font-black text-neutral-900 uppercase tracking-tight">
                       First-Time Login Bonus
                     </span>
-                    <span className="text-[10px] bg-[#0C831F] text-white font-extrabold px-1.5 py-0.2 rounded-sm">
+                    <span className="text-[10px] bg-[#2E647D] text-white font-extrabold px-1.5 py-0.2 rounded-sm">
                       ₹500 IN WALLET
                     </span>
                   </div>
@@ -190,7 +190,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
                 <button
                   onClick={handleSendOtp}
-                  className="w-full py-3 bg-[#0C831F] hover:bg-[#0A701A] text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5"
+                  className="w-full py-3 bg-[#2E647D] hover:bg-[#255166] text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5"
                 >
                   <span>Continue</span>
                   <ArrowRight className="w-4 h-4" />
@@ -278,7 +278,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
               <button
                 onClick={() => handleVerifyOtp(true, 'Researcher User', phone || '9912345678')}
-                className="w-full py-3 bg-[#0C831F] hover:bg-[#0A701A] text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5"
+                className="w-full py-3 bg-[#2E647D] hover:bg-[#255166] text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5"
               >
                 <span>Verify & Claim ₹500 Credit</span>
                 <CheckCircle2 className="w-4 h-4" />

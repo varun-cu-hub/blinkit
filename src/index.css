@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/*
+ * Minimal market palette: warm white surfaces, charcoal type, and a single
+ * ocean-blue accent. It keeps products visually dominant and avoids visual noise.
+ */
+@theme {
+  --color-neutral-50: #fcfbf7;
+  --color-neutral-100: #f4f0e7;
+  --color-neutral-200: #e4ddcf;
+  --color-neutral-300: #d0c6b4;
+  --color-neutral-400: #9f947f;
+  --color-neutral-500: #786f60;
+  --color-neutral-600: #5e5549;
+  --color-neutral-700: #463f36;
+  --color-neutral-800: #332e28;
+  --color-neutral-900: #25211d;
+  --color-neutral-950: #181512;
+
+  --color-emerald-50: #eff6f8;
+  --color-emerald-100: #d9e9ee;
+  --color-emerald-200: #b7d4de;
+  --color-emerald-300: #8cbac9;
+  --color-emerald-400: #639caf;
+  --color-emerald-500: #457d94;
+  --color-emerald-600: #2e647d;
+  --color-emerald-700: #255166;
+  --color-emerald-800: #1d4052;
+  --color-emerald-900: #183440;
+  --color-emerald-950: #10242c;
+
+  --color-amber-50: #f3f7f9;
+  --color-amber-100: #e2edf1;
+  --color-amber-200: #c8dce4;
+  --color-amber-300: #a6c4d0;
+  --color-amber-400: #7fa5b7;
+  --color-amber-500: #5d849a;
+  --color-amber-600: #466b82;
+  --color-amber-700: #38566a;
+  --color-amber-800: #2e4657;
+  --color-amber-900: #263b49;
+  --color-amber-950: #172630;
+
+  --color-yellow-300: #f4b994;
+  --color-yellow-400: #e99d72;
+  --color-blue-50: #f0f3f7;
+  --color-blue-500: #587091;
+  --color-blue-600: #405b7c;
+  --color-blue-700: #334960;
+  --color-blue-800: #293b4e;
+  --color-blue-950: #192634;
+  --color-purple-50: #f4f1eb;
+  --color-purple-500: #806f54;
+  --color-purple-700: #63553f;
+  --color-purple-800: #504532;
+  --color-purple-950: #302719;
+}

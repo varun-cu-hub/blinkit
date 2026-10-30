@@ -70,7 +70,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
   ];
 
   return (
-    <div className="flex flex-col min-h-full bg-[#F5F6F8] text-neutral-900 pb-24">
+    <div className="flex flex-col min-h-full bg-[#FAF9FD] text-neutral-900 pb-24">
       {/* Top Header */}
       <div className="bg-white px-5 pt-4 pb-4 border-b border-neutral-100 shadow-2xs">
         <h1 className="text-lg font-black text-neutral-900 tracking-tight">My Account</h1>
@@ -80,7 +80,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
       <div className="bg-white mx-3 mt-3 rounded-2xl p-4 border border-neutral-100 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-[#F8CB46]/20 border border-[#F8CB46]/60 flex items-center justify-center text-neutral-900 font-extrabold text-base shadow-2xs">
+            <div className="w-12 h-12 rounded-full bg-[#5D849A]/20 border border-[#5D849A]/60 flex items-center justify-center text-neutral-900 font-extrabold text-base shadow-2xs">
               <User className="w-6 h-6 text-neutral-800" />
             </div>
             <div>
@@ -104,7 +104,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           </div>
           <button 
             onClick={onOpenLogin}
-            className="text-xs font-bold text-[#0C831F] hover:text-emerald-800 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 transition-colors"
+            className="text-xs font-bold text-[#2E647D] hover:text-emerald-800 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 transition-colors"
           >
             Switch
           </button>
@@ -112,16 +112,16 @@ export const AccountTab: React.FC<AccountTabProps> = ({
       </div>
 
       {/* Wallet Banner Card (Blinkit Yellow & Green Color Scheme) */}
-      <div className="mx-3 mt-3 bg-gradient-to-br from-[#FFFBEB] via-[#FFF9E6] to-[#FEF3C7] rounded-2xl p-4 border border-[#F8CB46]/40 shadow-xs">
+      <div className="mx-3 mt-3 bg-gradient-to-br from-[#FCFBF7] via-[#F3F7F9] to-[#E2EDF1] rounded-2xl p-4 border border-[#5D849A]/40 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-[#F8CB46] text-neutral-950 flex items-center justify-center font-bold shadow-2xs">
+            <div className="w-10 h-10 rounded-xl bg-[#5D849A] text-neutral-950 flex items-center justify-center font-bold shadow-2xs">
               <WalletIcon className="w-5 h-5 text-neutral-900" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-bold text-neutral-800 tracking-wide uppercase">Wallet</span>
-                <span className="bg-[#0C831F] text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-sm">
+                <span className="bg-[#2E647D] text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-sm">
                   Active
                 </span>
               </div>
@@ -131,7 +131,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
             </div>
           </div>
           <div className="text-right">
-            <span className="inline-block bg-[#0C831F] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-xl shadow-xs">
+            <span className="inline-block bg-[#2E647D] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-xl shadow-xs">
               Auto-Applied
             </span>
             <p className="text-[10px] text-neutral-500 font-medium mt-1">
@@ -150,7 +150,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <ShoppingBag className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -172,7 +172,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <MapPin className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -194,7 +194,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <FileText className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -216,7 +216,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <Gift className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -238,7 +238,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <HelpCircle className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -260,7 +260,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#F8CB46]/20 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 flex items-center justify-center group-hover:bg-[#5D849A]/20 transition-colors">
               <ShieldCheck className="w-4 h-4 text-neutral-700" />
             </div>
             <div>
@@ -311,7 +311,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 text-[#0C831F]" />
+                <ShoppingBag className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">My Orders</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">
@@ -346,7 +346,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
                           setActiveModal(null);
                           if (onReorder) onReorder();
                         }}
-                        className="font-bold text-[#0C831F] hover:underline flex items-center gap-1"
+                        className="font-bold text-[#2E647D] hover:underline flex items-center gap-1"
                       >
                         <RotateCcw className="w-3 h-3" /> Reorder
                       </button>
@@ -370,7 +370,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#0C831F]" />
+                <MapPin className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">Saved Addresses</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">
@@ -408,7 +408,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-[#0C831F]" />
+                <FileText className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">My Prescriptions</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">
@@ -430,7 +430,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
               ))}
               <button 
                 onClick={() => alert('Camera / file picker for doctor prescription')}
-                className="w-full py-3 rounded-2xl bg-[#0C831F] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-3 rounded-2xl bg-[#2E647D] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-sm"
               >
                 <Plus className="w-4 h-4" /> Upload New Prescription
               </button>
@@ -445,7 +445,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <Gift className="w-5 h-5 text-[#0C831F]" />
+                <Gift className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">E-Gift Cards</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">
@@ -466,7 +466,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
                 />
                 <button 
                   onClick={() => alert('Voucher applied!')}
-                  className="bg-[#0C831F] text-white px-4 py-2 rounded-xl text-xs font-bold"
+                  className="bg-[#2E647D] text-white px-4 py-2 rounded-xl text-xs font-bold"
                 >
                   Redeem
                 </button>
@@ -482,7 +482,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-[#0C831F]" />
+                <HelpCircle className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">Frequently Asked Questions</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">
@@ -517,7 +517,7 @@ export const AccountTab: React.FC<AccountTabProps> = ({
           <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[85vh] flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-[#0C831F]" />
+                <ShieldCheck className="w-5 h-5 text-[#2E647D]" />
                 <h3 className="text-base font-extrabold text-neutral-900">Account Privacy & Security</h3>
               </div>
               <button onClick={() => setActiveModal(null)} className="p-1 text-neutral-400 hover:text-neutral-700">

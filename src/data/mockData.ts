@@ -1,7 +1,52 @@
 import { Product, DeliveryAddress, UserProfileHistory } from '../types';
-import { ALL_CATEGORY_PRODUCTS } from './categories';
+/** A concise catalogue in which every listing has its own verified local image. */
+const LEGACY_PRODUCT_CATALOG: Product[] = [
+  { id: 'prod-atta-aashirvaad-5kg', name: 'Aashirvaad Shudh Chakki Atta', brand: 'Aashirvaad', weight: '5 Kg', price: 255, mrp: 290, discountPercentage: 12, image: '/products/aashirvaad_atta.jpg', category: 'Atta, Rice & Dal', deliveryTime: '8 MINS', inStock: true, unit: 'pack', tag: 'Bestseller' },
+  { id: 'prod-rice-daawat-5kg', name: 'Daawat Rozana Basmati Rice', brand: 'Daawat', weight: '5 Kg', price: 368, mrp: 440, discountPercentage: 16, image: '/products/daawat_basmati.jpg', category: 'Atta, Rice & Dal', deliveryTime: '8 MINS', inStock: true, unit: 'pack', tag: 'Popular' },
+  { id: 'prod-dal-tata-moong-500g', name: 'Tata Sampann Moong Daal', brand: 'Tata Sampann', weight: '500 g', price: 98, mrp: 115, discountPercentage: 15, image: '/products/moong_daal.jpg', category: 'Atta, Rice & Dal', deliveryTime: '9 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-oil-fortune-sunflower-1l', name: 'Fortune Sunflower Oil', brand: 'Fortune', weight: '1 L', price: 145, mrp: 170, discountPercentage: 15, image: '/products/fortune_oil.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '7 MINS', inStock: true, unit: 'bottle', tag: 'Staple' },
+  { id: 'prod-spice-everest-chilli-100g', name: 'Everest Kashmiri Red Chilli Powder', brand: 'Everest', weight: '100 g', price: 48, mrp: 56, discountPercentage: 14, image: '/products/everest_chilli.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '7 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-spice-catch-turmeric-200g', name: 'Catch Turmeric Powder', brand: 'Catch', weight: '200 g', price: 58, mrp: 68, discountPercentage: 15, image: '/products/catch_turmeric.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-paste-dabur-ginger-garlic-200g', name: 'Dabur Ginger Garlic Paste', brand: 'Dabur', weight: '200 g', price: 50, mrp: 60, discountPercentage: 17, image: '/products/dabur_ginger_garlic.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '7 MINS', inStock: true, unit: 'jar' },
+  { id: 'prod-milk-amul-gold-1l', name: 'Amul Gold Full Cream Milk', brand: 'Amul', weight: '1 L', price: 68, mrp: 70, image: '/products/amul_milk.jpg', category: 'Dairy, Bread & Eggs', deliveryTime: '8 MINS', inStock: true, unit: 'pack', tag: 'Daily Essential' },
+  { id: 'prod-butter-amul-100g', name: 'Amul Pasteurised Butter', brand: 'Amul', weight: '100 g', price: 58, mrp: 62, discountPercentage: 6, image: '/products/amul_butter.jpg', category: 'Dairy, Bread & Eggs', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-onion-fresh-1kg', name: 'Fresh Red Onions', brand: 'Farm Fresh', weight: '1 Kg', price: 35, mrp: 45, discountPercentage: 22, image: '/products/fresh_onions.jpg', category: 'Vegetables & Fruits', deliveryTime: '7 MINS', inStock: true, unit: 'pack', tag: 'Fresh Today' },
+  { id: 'prod-coriander-fresh-100g', name: 'Fresh Coriander', brand: 'Farm Fresh', weight: '100 g', price: 15, mrp: 20, discountPercentage: 25, image: '/products/fresh_coriander.jpg', category: 'Vegetables & Fruits', deliveryTime: '9 MINS', inStock: true, unit: 'bunch' },
+  { id: 'prod-chips-lays-magic-90g', name: "Lay's India's Magic Masala", brand: "Lay's", weight: '90 g', price: 40, mrp: 40, image: '/products/lays_chips.jpg', category: 'Chips & Namkeen', deliveryTime: '8 MINS', inStock: true, unit: 'pack', tag: 'Top Snack' },
+  { id: 'prod-namkeen-haldiram-bhujia-400g', name: "Haldiram's Aloo Bhujia", brand: "Haldiram's", weight: '400 g', price: 115, mrp: 125, discountPercentage: 8, image: '/products/haldirams_bhujia.jpg', category: 'Chips & Namkeen', deliveryTime: '9 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-noodles-maggi-280g', name: 'Maggi 2-Minute Masala Noodles', brand: 'Maggi', weight: '280 g', price: 60, mrp: 60, image: '/products/maggi_noodles.jpg', category: 'Instant Food', deliveryTime: '8 MINS', inStock: true, unit: 'pack', tag: 'Quick Meal' },
+  { id: 'prod-cola-coca-cola-300ml', name: 'Coca-Cola Soft Drink', brand: 'Coca-Cola', weight: '300 ml', price: 40, mrp: 40, image: '/products/coca_cola.jpg', category: 'Drinks & Juices', deliveryTime: '8 MINS', inStock: true, unit: 'bottle', tag: 'Chilled' },
+  { id: 'prod-biscuit-parle-g-800g', name: 'Parle-G Glucose Biscuits', brand: 'Parle', weight: '800 g', price: 90, mrp: 100, discountPercentage: 10, image: '/products/parle_g_biscuits.jpg', category: 'Bakery & Biscuits', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-eno-fruit-salt-100g', name: 'ENO Fruit Salt', brand: 'ENO', weight: '100 g Bottle', price: 145, mrp: 160, discountPercentage: 9, image: '/products/eno_fruit_salt.jpg', category: 'Health & Pharma', deliveryTime: '9 MINS', inStock: true, unit: 'bottle' },
+  { id: 'prod-vim-dishwash-500ml', name: 'Vim Lemon Dishwash Gel', brand: 'Vim', weight: '500 ml', price: 105, mrp: 120, discountPercentage: 12, image: '/products/vim_dishwash.jpg', category: 'Cleaners & Repellents', deliveryTime: '10 MINS', inStock: true, unit: 'bottle' },
+  { id: 'prod-surf-matic-1l', name: 'Surf Excel Matic Liquid Detergent', brand: 'Surf Excel', weight: '1 L', price: 230, mrp: 260, discountPercentage: 12, image: '/products/surf_excel_matic.jpg', category: 'Cleaners & Repellents', deliveryTime: '11 MINS', inStock: true, unit: 'bottle' },
+  { id: 'prod-cycle-agarbatti-150', name: 'Cycle Pure Agarbatti', brand: 'Cycle Pure', weight: '150 sticks', price: 75, mrp: 85, discountPercentage: 12, image: '/products/cycle_agarbatti.jpg', category: 'Home & Lifestyle', deliveryTime: '10 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-mangaldeep-camphor-50g', name: 'Mangaldeep Pure Camphor', brand: 'Mangaldeep', weight: '50 g', price: 65, mrp: 75, discountPercentage: 13, image: '/products/mangaldeep_camphor.jpg', category: 'Home & Lifestyle', deliveryTime: '11 MINS', inStock: true, unit: 'pack' }
+];
 
-export const INITIAL_PRODUCTS: Product[] = ALL_CATEGORY_PRODUCTS;
+/**
+ * The visible range deliberately uses only images that match the displayed
+ * item. Brand claims are omitted unless the source image visibly confirms it.
+ */
+export const INITIAL_PRODUCTS: Product[] = [
+  { id: 'prod-whole-wheat-1kg', name: 'Whole Wheat Grains', brand: 'Pantry Staples', weight: '1 Kg', price: 72, mrp: 80, discountPercentage: 10, image: '/products/aashirvaad_atta.jpg', category: 'Atta, Rice & Dal', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-rice-daawat-5kg', name: 'Basmati Rice', brand: 'Pantry Staples', weight: '1 Kg', price: 110, mrp: 125, discountPercentage: 12, image: '/products/daawat_basmati.jpg', category: 'Atta, Rice & Dal', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-dal-tata-moong-500g', name: 'Split Yellow Moong Daal', brand: 'Pantry Staples', weight: '500 g', price: 98, mrp: 115, discountPercentage: 15, image: '/products/moong-daal-v2.png', category: 'Atta, Rice & Dal', deliveryTime: '9 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-cooking-oil-500ml', name: 'Cold-Pressed Cooking Oil', brand: 'Pantry Staples', weight: '500 ml', price: 185, mrp: 210, discountPercentage: 12, image: '/products/fortune_oil.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '7 MINS', inStock: true, unit: 'bottle' },
+  { id: 'prod-whole-spices-100g', name: 'Whole Spice Selection', brand: 'Kitchen Staples', weight: '100 g', price: 75, mrp: 85, discountPercentage: 12, image: '/products/everest_chilli.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-mixed-spice-blend-100g', name: 'Mixed Spice Blend', brand: 'Kitchen Staples', weight: '100 g', price: 65, mrp: 75, discountPercentage: 13, image: '/products/catch_turmeric.jpg', category: 'Oil, Ghee & Masala', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-paste-ginger-garlic-200g', name: 'Fresh Ginger Garlic Paste', brand: 'Kitchen Staples', weight: '200 g', price: 50, mrp: 60, discountPercentage: 17, image: '/products/ginger-garlic-paste-v2.png', category: 'Oil, Ghee & Masala', deliveryTime: '7 MINS', inStock: true, unit: 'jar' },
+  { id: 'prod-fresh-whole-milk-1l', name: 'Fresh Whole Milk', brand: 'Dairy Essentials', weight: '1 L', price: 68, mrp: 72, image: '/products/amul_milk.jpg', category: 'Dairy, Bread & Eggs', deliveryTime: '8 MINS', inStock: true, unit: 'bottle' },
+  { id: 'prod-salted-butter-100g', name: 'Salted Butter', brand: 'Dairy Essentials', weight: '100 g', price: 58, mrp: 65, discountPercentage: 10, image: '/products/amul_butter.jpg', category: 'Dairy, Bread & Eggs', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-onion-fresh-1kg', name: 'Fresh Red Onions', brand: 'Farm Fresh', weight: '1 Kg', price: 35, mrp: 45, discountPercentage: 22, image: '/products/fresh_onions.jpg', category: 'Vegetables & Fruits', deliveryTime: '7 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-coriander-fresh-100g', name: 'Fresh Coriander', brand: 'Farm Fresh', weight: '100 g', price: 15, mrp: 20, discountPercentage: 25, image: '/products/fresh-coriander-v2.png', category: 'Vegetables & Fruits', deliveryTime: '9 MINS', inStock: true, unit: 'bunch' },
+  { id: 'prod-cheetos-baked-puffs-85g', name: 'Cheetos Baked Puffs', brand: 'Cheetos', weight: '85 g', price: 45, mrp: 50, discountPercentage: 10, image: '/products/lays_chips.jpg', category: 'Chips & Namkeen', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-potato-chips-100g', name: 'Salted Potato Chips', brand: 'Snack Pantry', weight: '100 g', price: 55, mrp: 60, image: '/products/haldirams_bhujia.jpg', category: 'Chips & Namkeen', deliveryTime: '9 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-instant-noodles-280g', name: 'Instant Masala Noodles', brand: 'Meal Essentials', weight: '280 g', price: 60, mrp: 65, discountPercentage: 8, image: '/products/maggi_noodles.jpg', category: 'Instant Food', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-cola-coca-cola-300ml', name: 'Coca-Cola Original Taste', brand: 'Coca-Cola', weight: '300 ml', price: 40, mrp: 40, image: '/products/coca_cola.jpg', category: 'Drinks & Juices', deliveryTime: '8 MINS', inStock: true, unit: 'can' },
+  { id: 'prod-nabisco-glucose-biscuits-200g', name: 'Nabisco Glucose Biscuits', brand: 'Nabisco', weight: '200 g', price: 35, mrp: 40, discountPercentage: 12, image: '/products/parle_g_biscuits.jpg', category: 'Bakery & Biscuits', deliveryTime: '8 MINS', inStock: true, unit: 'pack' },
+  { id: 'prod-incense-sticks-150', name: 'Colourful Incense Sticks', brand: 'Home Essentials', weight: '150 sticks', price: 75, mrp: 85, discountPercentage: 12, image: '/products/cycle_agarbatti.jpg', category: 'Home & Lifestyle', deliveryTime: '10 MINS', inStock: true, unit: 'pack' }
+];
 
 export interface CategoryItem {
   id: string;
@@ -15,26 +60,11 @@ export const CATEGORIES: CategoryItem[] = [
   { id: 'oil-ghee-masala', name: 'Oil, Ghee & Masala', categoryName: 'Oil, Ghee & Masala' },
   { id: 'dairy-bread-eggs', name: 'Dairy, Bread & Eggs', categoryName: 'Dairy, Bread & Eggs' },
   { id: 'vegetables-fruits', name: 'Vegetables & Fruits', categoryName: 'Vegetables & Fruits' },
-  { id: 'chicken-meat-fish', name: 'Chicken, Meat & Fish', categoryName: 'Chicken, Meat & Fish' },
-  { id: 'sauces-spreads', name: 'Sauces & Spreads', categoryName: 'Sauces & Spreads' },
   { id: 'chips-namkeen', name: 'Chips & Namkeen', categoryName: 'Chips & Namkeen' },
-  { id: 'sweets-chocolates', name: 'Sweets & Chocolates', categoryName: 'Sweets & Chocolates' },
   { id: 'instant-food', name: 'Instant Food', categoryName: 'Instant Food' },
-  { id: 'tea-coffee', name: 'Tea & Coffee', categoryName: 'Tea, Coffee & Milk Drinks' },
   { id: 'drinks-juices', name: 'Drinks & Juices', categoryName: 'Drinks & Juices' },
   { id: 'bakery-biscuits', name: 'Bakery & Biscuits', categoryName: 'Bakery & Biscuits' },
-  { id: 'bath-body', name: 'Bath & Body', categoryName: 'Bath & Body' },
-  { id: 'beauty-cosmetics', name: 'Beauty & Cosmetics', categoryName: 'Beauty & Cosmetics' },
-  { id: 'skin-face', name: 'Skin & Face', categoryName: 'Skin & Face' },
-  { id: 'health-pharma', name: 'Health & Pharma', categoryName: 'Health & Pharma' },
-  { id: 'baby-care', name: 'Baby Care', categoryName: 'Baby Care' },
-  { id: 'paan-corner', name: 'Paan Corner', categoryName: 'Paan Corner' },
-  { id: 'cleaners-repellents', name: 'Cleaners & Repellents', categoryName: 'Cleaners & Repellents' },
-  { id: 'kitchenware', name: 'Kitchenware', categoryName: 'Kitchenware & Appliances' },
-  { id: 'home-lifestyle', name: 'Home & Lifestyle', categoryName: 'Home & Lifestyle' },
-  { id: 'stationery-games', name: 'Stationery & Games', categoryName: 'Stationery & Games' },
-  { id: 'dryfruits-cereals', name: 'Dry Fruits & Cereals', categoryName: 'Dry Fruits & Cereals' },
-  { id: 'rakhi-gifts', name: 'Rakhi Gifts', categoryName: 'Rakhi Gifts' }
+  { id: 'home-lifestyle', name: 'Home & Lifestyle', categoryName: 'Home & Lifestyle' }
 ];
 
 export const SAVED_ADDRESSES: DeliveryAddress[] = [

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   CartItem, 
   Product, 
@@ -23,6 +23,7 @@ import { AddressDrawer } from './components/AddressDrawer';
 import { AdminHistoryDrawer } from './components/AdminHistoryDrawer';
 import { OrderSuccessScreen } from './components/OrderSuccessScreen';
 import { LoginModal } from './components/LoginModal';
+import { AdminLoginModal } from './components/AdminLoginModal';
 import { ResearchDatabase } from './services/database';
 
 export default function App() {
@@ -32,7 +33,7 @@ export default function App() {
   // Screen navigation: default to 'home' to browse catalog and test search immediately
   const [currentScreen, setCurrentScreen] = useState<'home' | 'checkout' | 'success'>('home');
 
-  // Products catalogue (360+ authentic Indian products)
+  // Curated catalogue: every listing has a verified, matching local image.
   const [products] = useState<Product[]>(INITIAL_PRODUCTS);
 
   // Cart state: Preloaded with the exact items from the user's screenshot
@@ -59,6 +60,8 @@ export default function App() {
   const [isPaymentDrawerOpen, setIsPaymentDrawerOpen] = useState<boolean>(false);
   const [isAddressDrawerOpen, setIsAddressDrawerOpen] = useState<boolean>(false);
   const [isAdminDrawerOpen, setIsAdminDrawerOpen] = useState<boolean>(false);
+  const [isAdminLoginOpen, setIsAdminLoginOpen] = useState<boolean>(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   // Last order metrics for receipt & G-Sheets sync
@@ -73,6 +76,21 @@ export default function App() {
 
   // Theme color state (Classic Yellow vs Dark Amber/Orange)
   const [themeColor, setThemeColor] = useState<'classic-yellow' | 'dark-yellow'>('classic-yellow');
+
+  useEffect(() => {
+    fetch('/api/admin/session', { credentials: 'same-origin' })
+      .then((response) => response.json())
+      .then((result: { authenticated?: boolean }) => setIsAdminAuthenticated(Boolean(result.authenticated)))
+      .catch(() => setIsAdminAuthenticated(false));
+  }, []);
+
+  const requestAdminAccess = () => {
+    if (isAdminAuthenticated) {
+      setIsAdminDrawerOpen(true);
+      return;
+    }
+    setIsAdminLoginOpen(true);
+  };
 
   // Cart helper functions
   const handleUpdateQuantity = (productId: string, delta: number) => {
@@ -237,7 +255,7 @@ export default function App() {
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
     if (query.trim() !== '' && selectedCategory !== 'all') {
-      // Auto switch to all categories so user search is comprehensive across the 360+ products
+      // Auto switch to all categories so search stays comprehensive across the curated range.
       setSelectedCategory('all');
     }
     if (currentScreen !== 'home') {
@@ -250,7 +268,7 @@ export default function App() {
       <MobileFrame
         deviceType={deviceType}
         onDeviceChange={setDeviceType}
-        onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)}
+        onOpenAdminDrawer={requestAdminAccess}
         currentScreen={currentScreen}
         onNavigate={setCurrentScreen}
         cartCount={cart.reduce((sum, i) => sum + i.quantity, 0)}
@@ -260,7 +278,7 @@ export default function App() {
             <Header
               selectedAddress={selectedAddress}
               onOpenAddressDrawer={() => setIsAddressDrawerOpen(true)}
-              onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)}
+              onOpenAdminDrawer={requestAdminAccess}
               onOpenLogin={() => setIsLoginModalOpen(true)}
               walletBalance={currentUserHistory.walletBalance}
               searchQuery={searchQuery}
@@ -285,7 +303,7 @@ export default function App() {
               onClearSearch={() => setSearchQuery('')}
               onSearchSuggestionClick={(suggestion) => handleSearchChange(suggestion)}
               onOpenCheckout={() => setCurrentScreen('checkout')}
-              onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)}
+              onOpenAdminDrawer={requestAdminAccess}
             />
             <CartFloatingBar
               cart={cart}
@@ -301,7 +319,7 @@ export default function App() {
             onBack={() => setCurrentScreen('home')}
             onOpenPaymentDrawer={() => setIsPaymentDrawerOpen(true)}
             onOpenAddressDrawer={() => setIsAddressDrawerOpen(true)}
-            onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)}
+            onOpenAdminDrawer={requestAdminAccess}
             onPlaceOrder={handlePlaceOrder}
             selectedPayment={selectedPayment}
             selectedAddress={selectedAddress}
@@ -318,7 +336,7 @@ export default function App() {
             paymentMethod={lastOrderSummary.paid === 0 ? 'Blinkit Research Wallet' : selectedPayment}
             address={selectedAddress}
             onBackToHome={() => setCurrentScreen('home')}
-            onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)}
+            onOpenAdminDrawer={requestAdminAccess}
           />
         )}
       </MobileFrame>
@@ -346,12 +364,22 @@ export default function App() {
       />
 
       <AdminHistoryDrawer
-        isOpen={isAdminDrawerOpen}
+        isOpen={isAdminDrawerOpen && isAdminAuthenticated}
         onClose={() => setIsAdminDrawerOpen(false)}
         currentUserHistory={currentUserHistory}
         onSelectUserSegment={handleSelectUserSegment}
         currentSegmentKey={currentSegmentKey}
         cartTotal={totalCartAmount}
+      />
+
+      <AdminLoginModal
+        isOpen={isAdminLoginOpen}
+        onClose={() => setIsAdminLoginOpen(false)}
+        onAuthenticated={() => {
+          setIsAdminAuthenticated(true);
+          setIsAdminLoginOpen(false);
+          setIsAdminDrawerOpen(true);
+        }}
       />
 
       <LoginModal

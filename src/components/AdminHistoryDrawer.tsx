@@ -479,7 +479,7 @@ export const AdminHistoryDrawer: React.FC<AdminHistoryDrawerProps> = ({
                       <span>42% of volume</span>
                     </div>
                     <div className="w-full bg-neutral-200 h-2 rounded-full overflow-hidden">
-                      <div className="bg-[#0C831F] h-full rounded-full w-[42%]" />
+                      <div className="bg-[#2E647D] h-full rounded-full w-[42%]" />
                     </div>
                   </div>
 

@@ -35,7 +35,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Product Image */}
       <div className="w-full h-32 rounded-xl bg-neutral-50/80 p-2 flex items-center justify-center overflow-hidden mb-2">
         <img 
-          src={product.image} 
+          src={product.image}
           alt={product.name}
           loading="lazy"
           referrerPolicy="no-referrer"
@@ -77,15 +77,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {quantityInCart === 0 ? (
             <button
               onClick={() => onUpdateQuantity(product.id, 1)}
-              className="px-3.5 py-1.5 bg-emerald-50 text-[#0C831F] hover:bg-[#0C831F] hover:text-white border border-[#0C831F] rounded-lg text-xs font-bold transition-colors shadow-2xs active:scale-95"
+              className="px-3.5 py-1.5 bg-emerald-50 text-[#2E647D] hover:bg-[#2E647D] hover:text-white border border-[#2E647D] rounded-lg text-xs font-bold transition-colors shadow-2xs active:scale-95"
             >
               ADD
             </button>
           ) : (
-            <div className="flex items-center bg-[#0C831F] text-white rounded-lg shadow-xs overflow-hidden h-7">
+            <div className="flex items-center bg-[#2E647D] text-white rounded-lg shadow-xs overflow-hidden h-7">
               <button
                 onClick={() => onUpdateQuantity(product.id, -1)}
-                className="px-2 h-full flex items-center justify-center hover:bg-[#096618] active:bg-[#075313] transition-colors"
+                className="px-2 h-full flex items-center justify-center hover:bg-[#1D4052] active:bg-[#10242C] transition-colors"
               >
                 <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>
@@ -94,7 +94,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               </span>
               <button
                 onClick={() => onUpdateQuantity(product.id, 1)}
-                className="px-2 h-full flex items-center justify-center hover:bg-[#096618] active:bg-[#075313] transition-colors"
+                className="px-2 h-full flex items-center justify-center hover:bg-[#1D4052] active:bg-[#10242C] transition-colors"
               >
                 <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>

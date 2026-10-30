@@ -60,8 +60,8 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const bgHeaderClass = themeColor === 'dark-yellow' 
-    ? 'bg-gradient-to-b from-[#F5A623] to-[#F8CB46]' 
-    : 'bg-[#F8CB46]';
+    ? 'bg-gradient-to-b from-[#466B82] to-[#5D849A]'
+    : 'bg-[#5D849A]';
 
   return (
     <header className={`sticky top-0 z-30 ${bgHeaderClass} px-4 pt-3 pb-3.5 shadow-sm transition-colors`}>
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Brand Wordmark */}
           <div className="flex items-center">
             <span className="font-black text-xl tracking-tight text-neutral-900">
-              blink<span className="text-[#0C831F]">it</span>
+              blink<span className="text-[#2E647D]">it</span>
             </span>
           </div>
 

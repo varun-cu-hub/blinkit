@@ -57,7 +57,7 @@ export const OrderSuccessScreen: React.FC<OrderSuccessScreenProps> = ({
   const seconds = secondsRemaining % 60;
 
   return (
-    <div className="flex flex-col min-h-full bg-[#F5F6F8] text-neutral-900 pb-20">
+    <div className="flex flex-col min-h-full bg-[#FAF9FD] text-neutral-900 pb-20">
       {/* Top Header */}
       <div className="bg-white border-b border-neutral-200 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center gap-3">
@@ -83,7 +83,7 @@ export const OrderSuccessScreen: React.FC<OrderSuccessScreenProps> = ({
 
       <div className="p-4 space-y-3.5 max-w-lg mx-auto w-full">
         {/* ETA Hero Card */}
-        <div className="bg-gradient-to-br from-[#0C831F] to-[#085C15] text-white rounded-3xl p-5 shadow-lg relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#2E647D] to-[#183440] text-white rounded-3xl p-5 shadow-lg relative overflow-hidden">
           <div className="flex items-start justify-between relative z-10">
             <div>
               <div className="flex items-center gap-1.5 text-emerald-200 text-xs font-semibold uppercase tracking-wider">
@@ -148,7 +148,7 @@ export const OrderSuccessScreen: React.FC<OrderSuccessScreenProps> = ({
           {/* Route Map Card */}
           <div className="relative h-32 rounded-xl bg-slate-100 border border-neutral-200 overflow-hidden flex items-center justify-center">
             {/* Stylized road grid representation */}
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px]" />
+            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#463F36_1px,transparent_1px)] [background-size:16px_16px]" />
             <div className="absolute top-1/2 left-6 right-6 h-1 bg-emerald-300 -translate-y-1/2 dashed rounded" />
             
             {/* Store Pin */}
@@ -161,7 +161,7 @@ export const OrderSuccessScreen: React.FC<OrderSuccessScreenProps> = ({
 
             {/* Rider moving */}
             <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center animate-pulse">
-              <div className="w-8 h-8 rounded-full bg-[#0C831F] text-white flex items-center justify-center text-xs shadow-lg border-2 border-white ring-2 ring-emerald-400">
+              <div className="w-8 h-8 rounded-full bg-[#2E647D] text-white flex items-center justify-center text-xs shadow-lg border-2 border-white ring-2 ring-emerald-400">
                 <Bike className="w-4 h-4" />
               </div>
               <span className="text-[9px] font-bold text-emerald-800 bg-white/90 px-1 rounded mt-1 shadow-2xs">
@@ -214,12 +214,12 @@ export const OrderSuccessScreen: React.FC<OrderSuccessScreenProps> = ({
           </div>
 
           {walletDeducted > 0 && (
-            <div className="p-2.5 bg-[#FFFBEB] border border-[#F8CB46] rounded-xl flex items-center justify-between text-xs font-bold text-neutral-900">
+            <div className="p-2.5 bg-[#FCFBF7] border border-[#5D849A] rounded-xl flex items-center justify-between text-xs font-bold text-neutral-900">
               <div className="flex items-center gap-1.5">
                 <span>👛</span>
                 <span>Paid via Wallet</span>
               </div>
-              <span className="text-[#0C831F] font-black">-₹{walletDeducted}</span>
+              <span className="text-[#2E647D] font-black">-₹{walletDeducted}</span>
             </div>
           )}
 

@@ -115,7 +115,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
 
 
   return (
-    <div className="flex flex-col min-h-full bg-[#F5F6F8] text-neutral-900 pb-28">
+    <div className="flex flex-col min-h-full bg-[#FAF9FD] text-neutral-900 pb-28">
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-30 bg-white border-b border-neutral-100 px-4 py-3 flex items-center justify-between shadow-xs">
         <div className="flex items-center gap-3">
@@ -155,11 +155,11 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                 alert('Cart link copied to clipboard!');
               }
             }}
-            className="flex items-center gap-1.5 text-xs font-semibold text-[#0C831F] hover:text-[#096618] px-2 py-1 rounded-lg hover:bg-emerald-50 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-[#2E647D] hover:text-[#1D4052] px-2 py-1 rounded-lg hover:bg-emerald-50 transition-colors"
           >
             <div className="relative">
-              <ShoppingBag className="w-4 h-4 text-[#0C831F]" />
-              <Share2 className="w-2.5 h-2.5 absolute -top-1 -right-1 text-[#0C831F]" />
+              <ShoppingBag className="w-4 h-4 text-[#2E647D]" />
+              <Share2 className="w-2.5 h-2.5 absolute -top-1 -right-1 text-[#2E647D]" />
             </div>
             <span>Share</span>
           </button>
@@ -171,26 +171,26 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
         {/* Your Total Savings Banner (Exact blue card matching screenshot) */}
         <div 
           id="savings-banner"
-          className="bg-[#EBF3FE] border border-[#D5E6FE] rounded-2xl p-3.5 flex items-center justify-between"
+          className="bg-[#F0F3F7] border border-[#E4DDCF] rounded-2xl p-3.5 flex items-center justify-between"
         >
           <div>
-            <div className="text-sm font-bold text-[#1D4ED8]">
+            <div className="text-sm font-bold text-[#334960]">
               Your total savings
             </div>
-            <div className="text-xs text-[#2563EB] font-medium mt-0.5">
+            <div className="text-xs text-[#405B7C] font-medium mt-0.5">
               Includes ₹{deliverySavings} savings through free delivery
             </div>
           </div>
-          <div className="text-xl font-extrabold text-[#1D4ED8] tracking-tight">
+          <div className="text-xl font-extrabold text-[#334960] tracking-tight">
             ₹{totalSavings > 0 ? totalSavings : 29}
           </div>
         </div>
 
         {/* Wallet Perk Card (App UI & Colour Scheme) */}
         {currentUserHistory.walletBalance > 0 && (
-          <div className="bg-gradient-to-r from-[#FFFBEB] via-[#FFF9E6] to-[#FEF3C7] border border-[#F8CB46] rounded-2xl p-3.5 shadow-xs flex items-center justify-between gap-3">
+          <div className="bg-gradient-to-r from-[#FCFBF7] via-[#F3F7F9] to-[#E2EDF1] border border-[#5D849A] rounded-2xl p-3.5 shadow-xs flex items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F8CB46] text-neutral-950 flex items-center justify-center shrink-0 font-bold shadow-2xs">
+              <div className="w-10 h-10 rounded-xl bg-[#5D849A] text-neutral-950 flex items-center justify-center shrink-0 font-bold shadow-2xs">
                 <span className="text-base">👛</span>
               </div>
               <div>
@@ -198,7 +198,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                   <span className="text-xs font-black text-neutral-900 uppercase tracking-tight">
                     Wallet
                   </span>
-                  <span className="text-[10px] font-extrabold bg-[#0C831F] text-white px-1.5 py-0.2 rounded-sm">
+                  <span className="text-[10px] font-extrabold bg-[#2E647D] text-white px-1.5 py-0.2 rounded-sm">
                     ₹{currentUserHistory.walletBalance} AVAILABLE
                   </span>
                 </div>
@@ -215,8 +215,8 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
               onClick={() => setUseWalletCredit(!useWalletCredit)}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 useWalletCredit 
-                  ? 'bg-[#0C831F] text-white shadow-xs' 
-                  : 'bg-white border border-[#F8CB46] text-neutral-900 hover:bg-[#FFFBEB]'
+                  ? 'bg-[#2E647D] text-white shadow-xs'
+                  : 'bg-white border border-[#5D849A] text-neutral-900 hover:bg-[#FCFBF7]'
               }`}
             >
               {useWalletCredit ? 'Applied ✓' : 'Apply'}
@@ -266,10 +266,10 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
               </div>
 
               {/* Blinkit Signature Green Stepper Button (+ 1 - as shown in screenshot) */}
-              <div className="flex items-center bg-[#0C831F] text-white rounded-lg shadow-xs overflow-hidden h-7 shrink-0">
+              <div className="flex items-center bg-[#2E647D] text-white rounded-lg shadow-xs overflow-hidden h-7 shrink-0">
                 <button
                   onClick={() => onUpdateQuantity(item.product.id, 1)}
-                  className="px-2 h-full flex items-center justify-center hover:bg-[#096618] active:bg-[#075313] transition-colors"
+                  className="px-2 h-full flex items-center justify-center hover:bg-[#1D4052] active:bg-[#10242C] transition-colors"
                   title="Increase quantity"
                 >
                   <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -279,7 +279,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                 </span>
                 <button
                   onClick={() => onUpdateQuantity(item.product.id, -1)}
-                  className="px-2 h-full flex items-center justify-center hover:bg-[#096618] active:bg-[#075313] transition-colors"
+                  className="px-2 h-full flex items-center justify-center hover:bg-[#1D4052] active:bg-[#10242C] transition-colors"
                   title="Decrease quantity"
                 >
                   <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -293,7 +293,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-center relative overflow-hidden">
                 {/* Paper bag graphic with Blinkit print */}
-                <div className="w-7 h-8 bg-[#C59B6C] rounded-sm relative flex flex-col items-center justify-center shadow-xs">
+                <div className="w-7 h-8 bg-[#806F54] rounded-sm relative flex flex-col items-center justify-center shadow-xs">
                   <div className="w-4 h-2 border-t-2 border-l-2 border-r-2 border-amber-900 rounded-t-sm -mt-2 mb-1" />
                   <span className="text-[6px] font-black text-amber-950 tracking-tighter">blinkit</span>
                 </div>
@@ -314,7 +314,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
         {/* Mascot Banner: Return dry plastics collected in this order (Exact match from screenshot) */}
         <div 
           id="mascot-plastics-banner"
-          className="bg-[#EBF7EE] border border-[#CDEED5] rounded-2xl p-3 flex items-center gap-3"
+          className="bg-[#EFF6F0] border border-[#BAD6BF] rounded-2xl p-3 flex items-center gap-3"
         >
           {/* Mascot character avatar */}
           <div className="w-11 h-11 rounded-full bg-amber-300 flex items-center justify-center relative shrink-0 overflow-hidden shadow-xs border-2 border-amber-400">
@@ -336,7 +336,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
           </div>
 
           <div className="flex-1">
-            <p className="text-xs font-bold text-[#144A29] leading-snug">
+            <p className="text-xs font-bold text-[#183440] leading-snug">
               Return dry plastics collected in this order
             </p>
             <p className="text-[10px] text-emerald-700 mt-0.5">
@@ -355,7 +355,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
               onClick={() => setReturnPlastics(!returnPlastics)}
               className={`p-2.5 rounded-xl border flex flex-col justify-between transition-all cursor-pointer select-none ${
                 returnPlastics 
-                  ? 'border-[#22C55E] bg-[#F0FDF4] ring-1 ring-[#22C55E]/20' 
+                  ? 'border-[#639CAF] bg-[#EFF6F0] ring-1 ring-[#639CAF]/20'
                   : 'border-neutral-200 bg-white hover:border-neutral-300'
               }`}
             >
@@ -364,7 +364,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
                   Return plastics
                 </span>
                 <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${
-                  returnPlastics ? 'border-[#0C831F] bg-[#0C831F] text-white' : 'border-neutral-300'
+                  returnPlastics ? 'border-[#2E647D] bg-[#2E647D] text-white' : 'border-neutral-300'
                 }`}>
                   {returnPlastics && <Check className="w-2.5 h-2.5 stroke-[3]" />}
                 </div>
@@ -494,7 +494,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
           <button 
             id="btn-change-address"
             onClick={onOpenAddressDrawer}
-            className="text-xs font-bold text-[#0C831F] hover:text-[#096618] hover:underline px-2 py-1"
+            className="text-xs font-bold text-[#2E647D] hover:text-[#1D4052] hover:underline px-2 py-1"
           >
             Change
           </button>
@@ -574,12 +574,12 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
               </div>
 
               {walletDeducted > 0 && (
-                <div className="flex items-center justify-between text-neutral-900 font-bold bg-[#FFFBEB] p-2.5 rounded-xl border border-[#F8CB46]">
+                <div className="flex items-center justify-between text-neutral-900 font-bold bg-[#FCFBF7] p-2.5 rounded-xl border border-[#5D849A]">
                   <div className="flex items-center gap-1.5">
                     <span>👛</span>
                     <span>Wallet</span>
                   </div>
-                  <span className="text-[#0C831F] font-black">-₹{walletDeducted}</span>
+                  <span className="text-[#2E647D] font-black">-₹{walletDeducted}</span>
                 </div>
               )}
 
@@ -661,7 +661,7 @@ export const CheckoutScreen: React.FC<CheckoutScreenProps> = ({
           <button
             id="btn-place-order"
             onClick={() => onPlaceOrder(walletDeducted, finalToPay)}
-            className="flex-1 max-w-[240px] h-12 bg-[#0C831F] hover:bg-[#0A701A] active:bg-[#085C15] text-white rounded-xl flex items-center justify-between px-4 shadow-md transition-all active:scale-[0.99]"
+            className="flex-1 max-w-[240px] h-12 bg-[#2E647D] hover:bg-[#255166] active:bg-[#183440] text-white rounded-xl flex items-center justify-between px-4 shadow-md transition-all active:scale-[0.99]"
           >
             {/* Left part of button: Price & TOTAL label */}
             <div className="text-left flex flex-col justify-center">

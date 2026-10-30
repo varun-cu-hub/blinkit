@@ -21,7 +21,7 @@ export const CartFloatingBar: React.FC<CartFloatingBarProps> = ({
       <div 
         id="floating-cart-bar"
         onClick={onOpenCheckout}
-        className="bg-[#0C831F] text-white rounded-2xl p-3 shadow-xl flex items-center justify-between cursor-pointer hover:bg-[#0A701A] active:scale-[0.99] transition-all border border-emerald-500"
+        className="bg-[#2E647D] text-white rounded-2xl p-3 shadow-xl flex items-center justify-between cursor-pointer hover:bg-[#255166] active:scale-[0.99] transition-all border border-emerald-500"
       >
         {/* Item thumbnails & Count */}
         <div className="flex items-center gap-2.5">
